@@ -60,6 +60,11 @@
             background: var(--tg-theme-secondary-bg-color);
         }
 
+        #form {
+            display: none;
+            text-align: center;
+        }
+
         input {
             width: 90%;
             outline: none;
@@ -73,21 +78,17 @@
             border-color: #db5d5d;
         }
 
-        #form {
-            display: none;
-            text-align: center;
-        }
-
     </style>
 </head>
 <body>
     <div id="main">
         <h1>Онлайн магазин</h1>
-        <img src="https://klike.net/uploads/posts/2023-02/1676958920_3-54.jpg">
+<!--        <img src="https://klike.net/uploads/posts/2023-02/1676958920_3-54.jpg">-->
         <p>Текст внутри тега бади, внутри дива мейн, внутри тег р</p>
         <button id="buy">Купить(кнопка)</button>
     </div>
     <form id="form">
+        <h1>Оформление покупки</h1>
         <input type="text" placeholder="Имя" id="user_name">
         <input type="text" placeholder="Email" id="user_email">
         <input type="text" placeholder="Телефон" id="user_phone">
@@ -98,7 +99,7 @@
         let tg = window.Telegram.WebApp;
         let buy = document.getElementById("buy");
         let order = document.getElementById("order");
-
+        tg.expand();
         buy.addEventListener("click", () => {
             document.getElementById("main").style.display = "none";
             document.getElementById("form").style.display = "block";
